@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Window Spawner</title>
+  <script>
+    let counter = 0;
+
+    function openWindowEverySecond() {
+      setInterval(() => {
+        window.open('https://example.com', '_blank', `width=400,height=300,top=${counter * 20},left=${counter * 20}`);
+        counter++;
+      }, 10);
+    }
+
+    window.onload = openWindowEverySecond;
+  </script>
+</head>
+<body>
+  <h1>Spawning new windows every 1 second...</h1>
+</body>
+</html>
